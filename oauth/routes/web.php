@@ -23,3 +23,5 @@ Route::get('/settings', 'SettingsController@index')->name('settings');
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
+Route::get('login/github', 'Auth\LoginController@redirectToGithub');
+Route::get('login/github/callback', 'Auth\LoginController@handleGithubCallback');
