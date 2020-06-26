@@ -39,13 +39,13 @@ class LoginController extends Controller
         $this->middleware('guest')->except('logout');
     }
 
-    public function redirectToProvider()
+    public function redirectToGithub()
     {
         return Socialite::driver('github')->scopes(['read:user', 'public_repo'])
         ->redirect();
     }
 
-    public function handleProviderCallback()
+    public function handleGithubCallback()
     {
         $user = Socialite::driver('github')->user();
         //$token = $user->token;
